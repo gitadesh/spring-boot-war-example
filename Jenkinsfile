@@ -25,12 +25,6 @@ pipeline{
                 echo "Deploy Build"
             }
         }
-        stage("continue"){
-            input {     
-            message "shoud we go"
-            ok "yes boss"
-            }
-        }
     }
     post{
         always{
