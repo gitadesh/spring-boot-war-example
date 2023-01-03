@@ -9,6 +9,7 @@ pipeline{
                 //mvn test
                 sh 'mvn test'
                 echo "Test runned successfully"
+                slackSend channel: 'testing', message: 'Job started'
             }
         }
         stage("maven build"){
@@ -27,6 +28,7 @@ pipeline{
                 //plugin deply on container
                 deploy adapters: [tomcat9(credentialsId: '3c2d8288-2802-49e4-8838-668f97bc15f2', path: '', url: 'http://192.168.0.108:8080')], contextPath: '/app', war: '**/*.war'
                 echo "Deploy Build"
+                slackSend channel: 'testing', message: 'Job ended'
             }
         }
     }
