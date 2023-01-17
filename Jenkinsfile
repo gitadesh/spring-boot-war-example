@@ -8,7 +8,6 @@ pipeline{
             steps{
                 //mvn test
                 sh 'mvn clean'
-                sh 'mv test'
                 echo "Test runned successfully"
             }
         }
