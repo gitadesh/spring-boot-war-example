@@ -26,7 +26,7 @@ pipeline{
             }
             steps{
                 //plugin deply on container
-                deploy adapters: [tomcat9(credentialsId: '3c2d8288-2802-49e4-8838-668f97bc15f2', path: '', url: 'http://192.168.0.108:8080')], contextPath: '/app', war: '**/*.war'
+               deploy adapters: [tomcat9(credentialsId: '125c76f1-4d3c-4d74-8a65-f9e625cdebb8', path: '/app', url: 'http://192.168.0.107:8080/app/')], contextPath: null, war: '**/*.war'
                 echo "Deploy Build"
                 slackSend channel: 'testing', message: 'Job ended'
             }
