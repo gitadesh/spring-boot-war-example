@@ -7,7 +7,8 @@ pipeline{
         stage("maven test"){
             steps{
                 //mvn test
-                sh 'mvn test'
+                sh 'mvn clean'
+                sh 'mv test'
                 echo "Test runned successfully"
                 slackSend channel: 'testing', message: 'Job started'
             }
